@@ -125,6 +125,81 @@ const SAMPLE_BOOKS = [
       },
     ],
   },
+  ,{
+    id: "b004",
+    qr: "B004",
+    title: "Colours",
+    titleHi: "रंग",
+    ageGroup: "tiny",
+    cover: "🐻",
+    bgColor: "#FFF9E6",
+    pages: [
+      {
+        en: "Bear likes colours.",
+        hi: "भालू को पसंद थे रंग।",
+        word: "colours",
+        wordHi: "रंग",
+        emoji: "🌈",
+      },
+      {
+        en: "Now, her ears are yellow.",
+        hi: "कान हो गए पीले।",
+        word: "yellow",
+        wordHi: "पीले",
+        emoji: "🟡",
+      },
+      {
+        en: "Now, her tummy is brown.",
+        hi: "पेट हो गया भूरा।",
+        word: "brown",
+        wordHi: "भूरा",
+        emoji: "🟤",
+      },
+      {
+        en: "Now, her mouth is red.",
+        hi: "मुँह हो गया लाल।",
+        word: "red",
+        wordHi: "लाल",
+        emoji: "🔴",
+      },
+      {
+        en: "Now, her hands are blue.",
+        hi: "हाथ हो गए नीले।",
+        word: "blue",
+        wordHi: "नीले",
+        emoji: "🔵",
+      },
+      {
+        en: "Now, her back is green.",
+        hi: "पीठ हो गई हरी।",
+        word: "green",
+        wordHi: "हरी",
+        emoji: "🟢",
+      },
+      {
+        en: "Now, her legs are pink.",
+        hi: "पैर हो गए गुलाबी।",
+        word: "pink",
+        wordHi: "गुलाबी",
+        emoji: "🩷",
+      },
+      {
+        en: "Now, Bear is colourful!",
+        hi: "भालू हो गया रंगीन।",
+        word: "colourful",
+        wordHi: "रंगीन",
+        emoji: "✨",
+      },
+      {
+        en: "Oh no! Where did all her colours go?",
+        hi: "अरे, कहाँ गए रंग!",
+        word: "colours",
+        wordHi: "रंग",
+        emoji: "😱",
+      },
+    ],
+    attribution: "Story: Priyanka | Illustrations: Ajanta Guhathakurta | Published by Room to Read on StoryWeaver under CC BY 4.0",
+  }
 ];
 
 // ─── Speech Utility ───────────────────────────────────────────────────────────
@@ -382,7 +457,7 @@ function BookReader({ book, onClose }) {
       background: "linear-gradient(160deg, #0f0c29, #302b63, #24243e)",
       zIndex: 999, display: "flex", flexDirection: "column",
       alignItems: "center", justifyContent: "center",
-      padding: 20, overflow: "auto",
+      padding: "80px 20px 20px", overflow: "auto",
     }}>
       <StarBurst count={14} />
 
@@ -391,11 +466,18 @@ function BookReader({ book, onClose }) {
         width: "100%", maxWidth: 680, display: "flex",
         justifyContent: "space-between", alignItems: "center", marginBottom: 20,
       }}>
-        <button onClick={onClose} style={{
-          background: "#ffffff15", border: "2px solid #ffffff30",
-          borderRadius: 50, width: 44, height: 44, cursor: "pointer",
-          color: "#fff", fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center",
-        }}>←</button>
+        <div style={{ display: "flex", gap: 8 }}>
+          <button onClick={onClose} style={{
+            background: "#ffffff15", border: "2px solid #ffffff30",
+            borderRadius: 50, width: 44, height: 44, cursor: "pointer",
+            color: "#fff", fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center",
+          }}>←</button>
+          <button onClick={onClose} style={{
+            background: "#ffffff15", border: "2px solid #ffffff30",
+            borderRadius: 20, padding: "0 16px", height: 44, cursor: "pointer",
+            color: "#fff", fontSize: 13, fontFamily: "'Fredoka One', cursive",
+          }}>🏠 Home</button>
+        </div>
 
         <div style={{ textAlign: "center" }}>
           <div style={{ fontFamily: "'Fredoka One', cursive", color: "#fff", fontSize: 18 }}>{book.title}</div>
@@ -591,7 +673,7 @@ export default function ReadAlongApp() {
         <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 16px 60px" }}>
 
           {/* Header */}
-          <div style={{ textAlign: "center", paddingTop: 40, paddingBottom: 8 }}>
+          <div style={{ textAlign: "center", paddingTop: 80, paddingBottom: 8 }}>
             <div className="float" style={{ fontSize: 64, marginBottom: 8 }}>📚</div>
             <h1 style={{
               fontFamily: "'Fredoka One', cursive",
